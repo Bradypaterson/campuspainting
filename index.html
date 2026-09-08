@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Painting | Professional Student Painters</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: 'var(--brand-orange, #ea580c)',
+              red: 'var(--brand-red, #dc2626)',
+              pitch: '#000000',
+              surface: '#080808',
+              card: '#0e0e10',
+              border: '#1f1f23',
+            }
+          },
+          boxShadow: {
+            'grey-glow': '0 0 50px -10px rgba(255, 255, 255, 0.09)',
+            'grey-card': '0 20px 40px -15px rgba(255, 255, 255, 0.05)',
+            'grey-intense': '0 0 80px -20px rgba(200, 200, 200, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --brand-orange: #ea580c;
+      --brand-red: #dc2626;
+    }
+
+    .brand-pill-btn {
+      background: linear-gradient(135deg, var(--brand-orange), var(--brand-red));
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .brand-pill-btn:hover {
+      box-shadow: 0 0 25px rgba(234, 88, 12, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .grey-glow-spot {
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 70%);
+    }
+
+    /* Slideshow smooth transition */
+    .slide-item {
+      transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-neutral-800 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Ambient Grey Diffuse Shadows -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] grey-glow-spot blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-[900px] h-[400px] grey-glow-spot blur-3xl opacity-60"></div>
+  </div>
+
+  <!-- Top Navigation (Floats seamlessly over slideshow) -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/60 border-b border-neutral-900/60">
+    <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex flex-col tracking-wider">
+        <span class="text-sm font-black tracking-widest uppercase text-white leading-tight">Campus</span>
+        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400">Painting</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-xs tracking-wider uppercase font-medium text-neutral-400">
+        <a href="index.html" class="text-white">Home</a>
+        <a href="aboutus.html" class="hover:text-white transition-colors">About</a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="tel:1234567890" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <div class="hidden sm:block">
+        <a href="tel:1234567890" class="brand-pill-btn text-white text-xs uppercase tracking-wider font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 shadow-lg">
+          <span>(123) 456-7890</span>
+        </a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-neutral-400 hover:text-white" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-black border-b border-neutral-900 space-y-4 text-xs uppercase tracking-wider">
+      <a href="index.html" class="block text-white">Home</a>
+      <a href="aboutus.html" class="block text-neutral-400 hover:text-white">About</a>
+      <a href="#services" class="block text-neutral-400 hover:text-white">Services</a>
+      <a href="tel:5197788171" class="brand-pill-btn text-white text-center py-2.5 rounded-full block">Call (519) 778-8171</a>
+    </div>
+  </header>
+
+  <!-- Full-Screen Native Slideshow Hero -->
+  <section class="relative w-screen h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
+    
+    <!-- Slideshow Images -->
+    <div id="slideshow" class="absolute inset-0 w-full h-full">
+      <!-- Slide 1 (Active) -->
+      <div class="slide-item absolute inset-0 w-full h-full opacity-100">
+        <img 
+          src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop" 
+          alt="Campus Painting Project 1" 
+          class="w-full h-full object-cover scale-105"
+        />
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide-item absolute inset-0 w-full h-full opacity-0">
+        <img 
+          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2000&auto=format&fit=crop" 
+          alt="Campus Painting Project 2" 
+          class="w-full h-full object-cover scale-105"
+        />
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide-item absolute inset-0 w-full h-full opacity-0">
+        <img 
+          src="https://images.unsplash.com/photo-1595814433015-e58f000b2131?q=80&w=2000&auto=format&fit=crop" 
+          alt="Campus Painting Project 3" 
+          class="w-full h-full object-cover scale-105"
+        />
+      </div>
+    </div>
+
+    <!-- Dark Vignette Blends -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black pointer-events-none z-10"></div>
+    <div class="absolute inset-0 bg-radial from-transparent via-black/30 to-black pointer-events-none z-10"></div>
+
+    <!-- Centered Hero Text & Call to Action -->
+    <div class="relative z-20 text-center px-6 max-w-4xl">
+      <h1 class="text-4xl sm:text-7xl lg:text-8xl font-black uppercase tracking-[0.25em] text-white drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)]">
+        Campus <span class="block sm:inline font-light text-neutral-300">Painting</span>
+      </h1>
+      
+      <p class="mt-4 text-xs sm:text-sm tracking-[0.3em] uppercase text-neutral-300 font-medium drop-shadow-md">
+        Professional Painting • Student-Driven Work
+      </p>
+      
+      <p class="mt-2 text-[11px] sm:text-xs tracking-[0.25em] uppercase text-neutral-400 font-light">
+      • Available Year-Round •
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+    
+        <a href="tel:1234567890" class="brand-pill-btn text-white text-xs uppercase tracking-wider font-semibold px-8 py-3.5 rounded-full inline-flex items-center gap-2 shadow-2xl">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          <span>Call for Free Estimate: (519) 778-8171</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Down Arrow -->
+    <a href="#content" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-neutral-400 hover:text-white transition-colors animate-bounce p-2" aria-label="Scroll to Content">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+  </section>
+
+  <!-- Main Content (Flows directly beneath the slideshow) -->
+  <main id="content" class="relative z-10 flex-grow pt-20 pb-24">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <!-- Headline Intro Card with Grey Glow -->
+      <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-10 shadow-grey-glow mb-16 transition-all hover:shadow-grey-intense">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-neutral-400 font-semibold block mb-2">Quality & Value</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-3">
+              Reliable Tradesmanship, Honest Rates.
+            </h2>
+            <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+              We provide full interior and exterior painting services throughout the academic year. Experienced prep, razor-sharp edge work, and tidy job sites with zero corporate markups.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row md:justify-end gap-4">
+            <a href="aboutus.html" class="px-6 py-3 rounded-full border border-neutral-800 text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:border-neutral-600 transition-all text-center">
+              Meet The Painters
+            </a>
+            <a href="tel:5197788171" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2">
+              <span>Get a Quote</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Header -->
+      <div id="services" class="text-center mb-12">
+        <h2 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_15px_25px_rgba(255,255,255,0.08)]">
+          What We Do
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-400 tracking-wider uppercase mt-2">
+          Backed by three full seasons of trade experience
+        </p>
+      </div>
+
+      <!-- Services 3-Card Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16">
+        
+        <!-- Interior Card -->
+        <div class="relative group bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow transition-all duration-300 hover:shadow-grey-intense">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 mb-6 group-hover:text-white transition-colors">
+            <i data-lucide="palette" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xs font-bold tracking-wider uppercase text-white mb-2">Interior Painting</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+            Walls, ceilings, trim work, doors, baseboards, and accent walls with durable, smooth coats.
+          </p>
+          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Walls • Ceilings • Trim</span>
+        </div>
+
+        <!-- Exterior Card -->
+        <div class="relative group bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow transition-all duration-300 hover:shadow-grey-intense">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 mb-6 group-hover:text-white transition-colors">
+            <i data-lucide="home" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xs font-bold tracking-wider uppercase text-white mb-2">Exterior Refresh</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+            Decks, porches, fences, fascia, and siding prepped for weather-resistant longevity.
+          </p>
+          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Decks • Siding • Fences</span>
+        </div>
+
+        <!-- Drywall & Prep Card -->
+        <div class="relative group bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow transition-all duration-300 hover:shadow-grey-intense">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-300 mb-6 group-hover:text-white transition-colors">
+            <i data-lucide="wrench" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xs font-bold tracking-wider uppercase text-white mb-2">Drywall & Prep</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-4">
+            Complete hole patching, minor drywall repair, seamless feather sanding, and caulking.
+          </p>
+          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Patching • Sanding • Prime</span>
+        </div>
+
+      </div>
+
+      <!-- Trust Banner / Quick Contact Callout -->
+      <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-12 shadow-grey-glow text-center relative overflow-hidden transition-all hover:shadow-grey-intense">
+        <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-3">
+          Need a room or your whole property painted?
+        </h3>
+        <p class="text-xs sm:text-sm text-neutral-400 max-w-xl mx-auto mb-8 leading-relaxed">
+          Send us a text or call us directly. We come out, assess the surfaces, and give you a straight, no-nonsense estimate.
+        </p>
+        <a href="tel:1234567890" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-8 py-3.5 rounded-full inline-flex items-center gap-2 shadow-lg">
+          <i data-lucide="phone-call" class="w-4 h-4"></i>
+          <span>Call or Text: (519) 778-8171</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Minimal Dark Footer -->
+  <footer class="border-t border-neutral-900 bg-black py-8 text-center text-xs text-neutral-600 relative z-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="year"></span> Campus Painting. All rights reserved.</p>
+      <p class="text-neutral-500 tracking-wider uppercase text-[10px]">Ontario Student Painters</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+    // Infinite Slideshow Logic (Matches about.html)
+    const slides = document.querySelectorAll('.slide-item');
+    let currentSlide = 0;
+    const intervalTime = 5000; // 5 seconds per slide
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('opacity-100');
+      slides[currentSlide].classList.add('opacity-0');
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.remove('opacity-0');
+      slides[currentSlide].classList.add('opacity-100');
+    }
+
+    setInterval(nextSlide, intervalTime);
+  </script>
+</body>
+</html>
