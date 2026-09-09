@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Painting | About Us</title>
 
+  <!-- Google Fonts: Sygne & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sygne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
@@ -14,6 +19,10 @@
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            sygne: ['Sygne', 'sans-serif'],
+          },
           colors: {
             brand: {
               orange: 'var(--brand-orange, #ea580c)',
@@ -56,7 +65,7 @@
     /* Keep headshots sharp and properly scaled */
     .headshot-img {
       image-rendering: -webkit-optimize-contrast;
-      image-rendering: auto;
+      image-rendering: high-quality;
       backface-visibility: hidden;
       transform: translateZ(0);
     }
@@ -83,12 +92,12 @@
         <a href="index.html" class="hover:text-white transition-colors">Home</a>
         <a href="about.html" class="text-white">About</a>
         <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
-        <a href="tel:1234567890" class="hover:text-white transition-colors">Contact</a>
+        <a href="tel:5197788171" class="hover:text-white transition-colors">Contact</a>
       </div>
 
       <div class="hidden sm:block">
-        <a href="tel:1234567890" class="brand-pill-btn text-white text-xs uppercase tracking-wider font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 shadow-lg">
-          <span>(123) 456-7890</span>
+        <a href="tel:5197788171" class="brand-pill-btn text-white text-xs uppercase tracking-wider font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 shadow-lg">
+          <span>(519) 778-8171</span>
         </a>
       </div>
 
@@ -102,7 +111,7 @@
       <a href="index.html" class="block text-neutral-400 hover:text-white">Home</a>
       <a href="about.html" class="block text-white">About</a>
       <a href="index.html#services" class="block text-neutral-400 hover:text-white">Services</a>
-      <a href="tel:1234567890" class="brand-pill-btn text-white text-center py-2.5 rounded-full block">Call (123) 456-7890</a>
+      <a href="tel:5197788171" class="brand-pill-btn text-white text-center py-2.5 rounded-full block">Call (519) 778-8171</a>
     </div>
   </header>
 
@@ -118,11 +127,11 @@
       <!-- Card 1: Intro / Story Card with Grey Glow -->
       <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-10 shadow-grey-glow mb-8 transition-all hover:shadow-grey-intense">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+          <p class="font-sygne text-sm sm:text-base text-neutral-300 font-normal leading-relaxed tracking-wide">
             Two passionate students funding our education, with over 3 years of commercial and residential painting experience in Ontario. We deliver precision and reliability on every ladder we climb.
           </p>
           <div class="flex md:justify-end">
-            <a href="tel:1234567890" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">
+            <a href="tel:5197788171" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">
               <span>Get a Quote</span>
             </a>
           </div>
@@ -132,10 +141,10 @@
       <!-- Card 2: Mission Card with Grey Glow -->
       <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-10 shadow-grey-glow mb-16 transition-all hover:shadow-grey-intense">
         <h2 class="text-xl sm:text-2xl font-bold uppercase tracking-wide text-white mb-4">Our Mission</h2>
-        <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-8 max-w-2xl">
+        <p class="font-sygne text-sm sm:text-base text-neutral-300 font-normal leading-relaxed tracking-wide mb-8 max-w-2xl">
           To provide exceptional painting services with integrity, supporting our academic journeys while consistently exceeding client expectations.
         </p>
-        <a href="tel:1234567890" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">
+        <a href="tel:5197788171" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-6 py-3 rounded-full inline-flex items-center gap-2">
           <span>Get a Quote</span>
         </a>
       </div>
@@ -146,27 +155,25 @@
       </h2>
 
       <!-- Team Members Grid with Responsive Avatar Lock -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         
         <!-- Member 1: Brady Paterson -->
         <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-6 flex flex-row items-center gap-4 sm:gap-5 shadow-grey-glow hover:border-neutral-700 transition-all">
-          <!-- Locked circle container -->
           <div class="relative w-16 h-16 sm:w-20 sm:h-20 min-w-[4rem] min-h-[4rem] rounded-full overflow-hidden border border-neutral-700 bg-neutral-900 shrink-0 ring-2 ring-neutral-800 shadow-md">
             <img 
-              src="bradyheadshot.JPG" 
+              src="brady.png" 
               alt="Brady Paterson" 
               class="headshot-img w-full h-full max-w-full max-h-full object-cover object-center block"
             />
           </div>
           <div class="min-w-0">
             <h3 class="text-sm font-bold uppercase tracking-wider text-white truncate">Brady Paterson</h3>
-            <p class="text-[11px] uppercase tracking-wider text-neutral-400">Co-Founder & Lead Painter</p>
+            <p class="text-[11px] uppercase tracking-wider text-neutral-400 font-medium">Co-Founder & Lead Painter</p>
           </div>
         </div>
 
         <!-- Member 2: Sasha Thiessen -->
         <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-6 flex flex-row items-center gap-4 sm:gap-5 shadow-grey-glow hover:border-neutral-700 transition-all">
-          <!-- Locked circle container -->
           <div class="relative w-16 h-16 sm:w-20 sm:h-20 min-w-[4rem] min-h-[4rem] rounded-full overflow-hidden border border-neutral-700 bg-neutral-900 shrink-0 ring-2 ring-neutral-800 shadow-md">
             <img 
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" 
@@ -176,9 +183,91 @@
           </div>
           <div class="min-w-0">
             <h3 class="text-sm font-bold uppercase tracking-wider text-white truncate">Sasha Thiessen</h3>
-            <p class="text-[11px] uppercase tracking-wider text-neutral-400">Co-Founder & Lead Painter</p>
+            <p class="text-[11px] uppercase tracking-wider text-neutral-400 font-medium">Co-Founder & Lead Painter</p>
           </div>
         </div>
+
+      </div>
+
+      <!-- 3 Evenly-Spaced Social / Contact Cards (Transparent Logo Ready) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        
+        <!-- Email Card -->
+        <a href="mailto:info@campuspainting.ca"
+           class="group relative bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow transition-all duration-300 hover:shadow-grey-intense flex flex-col items-center justify-between">
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center text-white mb-6 group-hover:border-neutral-500 group-hover:bg-neutral-700/80 transition-all shrink-0">
+            <i data-lucide="mail" class="w-9 h-9 text-white group-hover:scale-110 transition-transform"></i>
+          </div>
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-neutral-500 font-semibold block mb-1">Direct Message</span>
+            <h4 class="text-base font-bold uppercase tracking-wider text-white mb-2">Email Us</h4>
+            <p class="font-sygne text-xs text-neutral-400 leading-relaxed tracking-wide mb-6">
+              Send us details, room dimensions, or photos of your project anytime.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/15 bg-white/[0.03] group-hover:bg-white/10 group-hover:border-white/30 text-white text-xs uppercase tracking-wider font-semibold transition-all">
+            <span>Send Email</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+          </span>
+        </a>
+
+        <!-- Instagram Card -->
+        <a href="https://instagram.com" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="group relative bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow transition-all duration-300 hover:shadow-grey-intense flex flex-col items-center justify-between">
+          
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center p-2.5 mb-6 group-hover:border-neutral-500 group-hover:bg-neutral-700/80 transition-all shrink-0 overflow-hidden">
+            <img 
+              src="whiteinstagram.webp" 
+              alt="Instagram" 
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+            />
+            <i data-lucide="instagram" class="w-6 h-6 text-white group-hover:scale-110 transition-transform hidden"></i>
+          </div>
+
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-neutral-500 font-semibold block mb-1">Portfolio & Stories</span>
+            <h4 class="text-base font-bold uppercase tracking-wider text-white mb-2">Instagram</h4>
+            <p class="font-sygne text-xs text-neutral-400 leading-relaxed tracking-wide mb-6">
+              Check out our latest job-site before & after reels, stories, and past client projects.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/15 bg-white/[0.03] group-hover:bg-white/10 group-hover:border-white/30 text-white text-xs uppercase tracking-wider font-semibold transition-all">
+            <span>Follow Us</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+          </span>
+        </a>
+
+        <!-- Facebook Card -->
+        <a href="https://facebook.com" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="group relative bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow transition-all duration-300 hover:shadow-grey-intense flex flex-col items-center justify-between">
+          
+          <div class="w-14 h-14 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center p-2.5 mb-6 group-hover:border-neutral-500 group-hover:bg-neutral-700/80 transition-all shrink-0 overflow-hidden">
+            <img 
+              src="whitefacebook.webp" 
+              alt="Facebook" 
+              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+              onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+            />
+            <i data-lucide="facebook" class="w-6 h-6 text-white group-hover:scale-110 transition-transform hidden"></i>
+          </div>
+
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-neutral-500 font-semibold block mb-1">Community Reviews</span>
+            <h4 class="text-base font-bold uppercase tracking-wider text-white mb-2">Facebook</h4>
+            <p class="font-sygne text-xs text-neutral-400 leading-relaxed tracking-wide mb-6">
+              Connect with us on Facebook for local homeowner recommendations and updates.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/15 bg-white/[0.03] group-hover:bg-white/10 group-hover:border-white/30 text-white text-xs uppercase tracking-wider font-semibold transition-all">
+            <span>Visit Page</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-white"></i>
+          </span>
+        </a>
 
       </div>
 
