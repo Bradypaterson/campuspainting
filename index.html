@@ -417,6 +417,20 @@
     if (slides.length > 1) {
       setInterval(slideNext, intervalTime);
     }
+
+    // Clean the URL if the user landed here via an external link with a hash
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.location.hash) {
+    const targetEl = document.querySelector(window.location.hash);
+    if (targetEl) {
+      setTimeout(() => {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Cleanly remove #services from the address bar without reloading
+        history.replaceState(null, '', window.location.pathname);
+      }, 100);
+    }
+  }
+});
   </script>
 </body>
 </html>
