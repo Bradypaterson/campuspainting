@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Painting</title>
   <link rel="canonical" href="https://campuspainting.ca/" />
-  <link rel="logo" type="image/x-icon" href="photos/logopng.jpg" >
+  <link rel="icon" type="image/jpeg" href="photos/logopng.jpg" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -321,6 +321,28 @@
     const menu = document.getElementById('mobile-menu');
     btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
+    // Smooth scroll handler preventing hash fragment (#services, #content) in the address bar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault(); // Suppress URL hash update
+          targetEl.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          // Close mobile menu if active
+          if (menu && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+          }
+        }
+      });
+    });
+
     // Slideshow Image URLs
     const slideshowImages = [
       "photos/rob1.png",
@@ -338,7 +360,6 @@
     // Build the slide elements positioned dynamically
     slideshowImages.forEach((src, idx) => {
       const slideDiv = document.createElement('div');
-      // Slide 0 starts in center; all subsequent slides start waiting to the right
       slideDiv.className = `slide-item absolute inset-0 w-full h-full ${
         idx === 0 ? 'translate-x-0 z-10' : 'translate-x-full z-0'
       }`;
