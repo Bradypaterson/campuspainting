@@ -53,9 +53,10 @@
       background: radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 70%);
     }
 
-    /* Slideshow smooth transition */
+    /* Seamless crossfade */
     .slide-item {
-      transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 1.2s ease-in-out;
+      will-change: opacity;
     }
   </style>
 </head>
@@ -85,7 +86,7 @@
 
       <div class="hidden sm:block">
         <a href="tel:5197788171" class="brand-pill-btn text-white text-xs uppercase tracking-wider font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 shadow-lg">
-          <span>(519) 778-8171</span>                                                                                                                                           
+          <span>(519) 778-8171</span>
         </a>
       </div>
 
@@ -106,39 +107,12 @@
   <!-- Full-Screen Native Slideshow Hero -->
   <section class="relative w-screen h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
     
-    <!-- Slideshow Images -->
-    <div id="slideshow" class="absolute inset-0 w-full h-full">
-      <!-- Slide 1 (Active) -->
-      <div class="slide-item absolute inset-0 w-full h-full opacity-100">
-        <img 
-          src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop" 
-          alt="Campus Painting Project 1" 
-          class="w-full h-full object-cover scale-105"
-        />
-      </div>
+    <!-- Slideshow Images Container (Dynamically populated via JS) -->
+    <div id="slideshow" class="absolute inset-0 w-full h-full bg-neutral-950"></div>
 
-      <!-- Slide 2 -->
-      <div class="slide-item absolute inset-0 w-full h-full opacity-0">
-        <img 
-          src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2000&auto=format&fit=crop" 
-          alt="Campus Painting Project 2" 
-          class="w-full h-full object-cover scale-105"
-        />
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="slide-item absolute inset-0 w-full h-full opacity-0">
-        <img 
-          src="https://images.unsplash.com/photo-1595814433015-e58f000b2131?q=80&w=2000&auto=format&fit=crop" 
-          alt="Campus Painting Project 3" 
-          class="w-full h-full object-cover scale-105"
-        />
-      </div>
-    </div>
-
-    <!-- Dark Vignette Blends -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/45 to-black pointer-events-none z-10"></div>
-    <div class="absolute inset-0 bg-radial from-transparent via-black/30 to-black pointer-events-none z-10"></div>
+    <!-- Dark Vignette Blends (Lighter middle gradient so photos stay visible) -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/30 to-black pointer-events-none z-10"></div>
+    <div class="absolute inset-0 bg-radial from-transparent via-black/20 to-black pointer-events-none z-10"></div>
 
     <!-- Centered Hero Text & Call to Action -->
     <div class="relative z-20 text-center px-6 max-w-4xl">
@@ -178,10 +152,10 @@
           <div>
             <span class="text-[10px] tracking-[0.25em] uppercase text-neutral-400 font-semibold block mb-2">Quality & Value</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-3">
-              Reliable Tradesmanship, Honest Rates.
+              Reliable work, Honest Rates.
             </h2>
             <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
-              We provide full interior and exterior painting services throughout the academic year. Experienced prep, razor-sharp edge work, and tidy job sites with zero corporate markups.
+              We provide full interior and exterior painting services throughout the academic year. We also provide general house services such as moving furniture, cleaning, and shoveling snow. Feel free to reach out with any questions!
             </p>
           </div>
           <div class="flex flex-col sm:flex-row md:justify-end gap-4">
@@ -197,7 +171,7 @@
 
       <!-- Services Header -->
       <div id="services" class="text-center mb-12">
-        <h2 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_15px_25px_rgba(255,255,255,0.08)]">
+        <h2 class="text-2xl sm:4xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_15px_25px_rgba(255,255,255,0.08)]">
           What We Do
         </h2>
         <p class="text-xs sm:text-sm text-neutral-400 tracking-wider uppercase mt-2">
@@ -217,7 +191,7 @@
           <p class="text-xs text-neutral-400 leading-relaxed mb-4">
             Walls, ceilings, trim work, doors, baseboards, and accent walls with durable, smooth coats.
           </p>
-          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Walls • Ceilings • Trim</span>
+          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Walls • Ceilings • Trim • more</span>
         </div>
 
         <!-- Exterior Card -->
@@ -229,7 +203,7 @@
           <p class="text-xs text-neutral-400 leading-relaxed mb-4">
             Decks, porches, fences, fascia, and siding prepped for weather-resistant longevity.
           </p>
-          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Decks • Siding • Fences</span>
+          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Decks • Siding • Fences • more</span>
         </div>
 
         <!-- Drywall & Prep Card -->
@@ -241,26 +215,12 @@
           <p class="text-xs text-neutral-400 leading-relaxed mb-4">
             Complete hole patching, minor drywall repair, seamless feather sanding, and caulking.
           </p>
-          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Patching • Sanding • Prime</span>
+          <span class="text-[11px] text-neutral-500 font-mono uppercase tracking-wider block">Patching • Sanding • Prime • more</span>
         </div>
 
       </div>
 
-      <!-- Trust Banner / Quick Contact Callout -->
-      <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-12 shadow-grey-glow text-center relative overflow-hidden transition-all hover:shadow-grey-intense mb-16">
-        <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-3">
-          Need a room or your whole property painted?
-        </h3>
-        <p class="text-xs sm:text-sm text-neutral-400 max-w-xl mx-auto mb-8 leading-relaxed">
-          Send us a text or call us directly. We come out, assess the surfaces, and give you a straight, no-nonsense estimate.
-        </p>
-        <a href="tel:5197788171" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-8 py-3.5 rounded-full inline-flex items-center gap-2 shadow-lg">
-          <i data-lucide="phone-call" class="w-4 h-4"></i>
-          <span>Call or Text: (519) 778-8171</span>
-        </a>
-      </div>
-
-      <!-- Contact & Socials Callout: Whole House Painted -->
+      <!-- Contact & Socials Callout -->
       <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-12 shadow-grey-glow text-center relative overflow-hidden transition-all hover:shadow-grey-intense">
         <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-3">
           Need a room or your whole house painted?
@@ -277,7 +237,7 @@
           </a>
         </div>
 
-        <!-- Social & Email Outlinks (Transparent Buttons with Image Logo Support) -->
+        <!-- Social & Email Outlinks -->
         <div class="pt-6 border-t border-neutral-900 flex flex-wrap items-center justify-center gap-4">
           
           <!-- Email -->
@@ -296,7 +256,7 @@
              title="Follow on Instagram">
             <div class="w-4 h-4 flex items-center justify-center shrink-0">
               <img 
-                src="whiteinstagram.webp" 
+                src="photos/whiteinstagram.webp" 
                 alt="Instagram" 
                 class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
@@ -314,7 +274,7 @@
              title="Follow on Facebook">
             <div class="w-4 h-4 flex items-center justify-center shrink-0">
               <img 
-                src="whitefacebook.webp" 
+                src="photos/whitefacebook.webp" 
                 alt="Facebook" 
                 class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
@@ -348,22 +308,64 @@
     const menu = document.getElementById('mobile-menu');
     btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    // Infinite Slideshow Logic (Matches about.html)
+    // ==========================================
+    // EASILY ADD OR REMOVE SLIDESHOW IMAGES HERE
+    // ==========================================
+    const slideshowImages = [
+      "photos/garagedone1.png",
+      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2000&auto=format&fit=crop",
+      "photos/garagedone1(1).png"
+      // Simply add more URLs here as needed:
+      // "your-image-4.jpg",
+      // "your-image-5.jpg"
+    ];
+
+    const slideshowContainer = document.getElementById('slideshow');
+
+    // Build the slide elements dynamically
+    slideshowImages.forEach((src, idx) => {
+      const slideDiv = document.createElement('div');
+      slideDiv.className = `slide-item absolute inset-0 w-full h-full ${idx === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0'}`;
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Campus Painting Showcase ${idx + 1}`;
+      img.className = 'w-full h-full object-cover scale-105';
+      
+      slideDiv.appendChild(img);
+      slideshowContainer.appendChild(slideDiv);
+    });
+
+    // Seamless Crossfade Logic (incoming slide fades in over the outgoing slide)
     const slides = document.querySelectorAll('.slide-item');
-    let currentSlide = 0;
-    const intervalTime = 5000; // 5 seconds per slide
+    let currentIndex = 0;
+    const intervalTime = 5000; // 5 seconds per photo
 
     function nextSlide() {
-      slides[currentSlide].classList.remove('opacity-100');
-      slides[currentSlide].classList.add('opacity-0');
+      if (slides.length <= 1) return;
 
-      currentSlide = (currentSlide + 1) % slides.length;
+      const outgoing = slides[currentIndex];
+      currentIndex = (currentIndex + 1) % slides.length;
+      const incoming = slides[currentIndex];
 
-      slides[currentSlide].classList.remove('opacity-0');
-      slides[currentSlide].classList.add('opacity-100');
+      // Elevate incoming slide and fade it in
+      incoming.style.zIndex = '2';
+      outgoing.style.zIndex = '1';
+      incoming.classList.remove('opacity-0');
+      incoming.classList.add('opacity-100');
+
+      // Once crossfade finishes (1200ms), cleanly reset outgoing slide
+      setTimeout(() => {
+        outgoing.classList.remove('opacity-100');
+        outgoing.classList.add('opacity-0');
+        outgoing.style.zIndex = '0';
+        incoming.style.zIndex = '1';
+      }, 1200);
     }
 
-    setInterval(nextSlide, intervalTime);
+    if (slides.length > 1) {
+      setInterval(nextSlide, intervalTime);
+    }
   </script>
 </body>
 </html>
