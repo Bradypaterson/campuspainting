@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3EZHKE3VNP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Security: Force browser to upgrade all HTTP requests to HTTPS -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-  gtag('config', 'G-3EZHKE3VNP');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EZHKE3VNP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EZHKE3VNP');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Painting | Professional Student Painters</title>
+  <link rel="canonical" href="https://campuspainting.ca/" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -62,10 +66,10 @@
       background: radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 70%);
     }
 
-    /* Seamless crossfade */
+    /* Hardware-accelerated slide transitions */
     .slide-item {
-      transition: opacity 1.2s ease-in-out;
-      will-change: opacity;
+      transition: transform 1.1s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
     }
   </style>
 </head>
@@ -87,8 +91,8 @@
       </a>
 
       <div class="hidden md:flex items-center gap-10 text-xs tracking-wider uppercase font-medium text-neutral-400">
-        <a href="/" class="text-white">Home</a>
-        <a href="/aboutus" class="hover:text-white transition-colors">About</a>
+        <a href="index.html" class="text-white">Home</a>
+        <a href="about.html" class="hover:text-white transition-colors">About</a>
         <a href="#services" class="hover:text-white transition-colors">Services</a>
         <a href="tel:5197788171" class="hover:text-white transition-colors">Contact</a>
       </div>
@@ -106,8 +110,8 @@
 
     <!-- Mobile Nav -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-black border-b border-neutral-900 space-y-4 text-xs uppercase tracking-wider">
-      <a href="/" class="block text-white">Home</a>
-      <a href="/aboutus" class="block text-neutral-400 hover:text-white">About</a>
+      <a href="index.html" class="block text-white">Home</a>
+      <a href="about.html" class="block text-neutral-400 hover:text-white">About</a>
       <a href="#services" class="block text-neutral-400 hover:text-white">Services</a>
       <a href="tel:5197788171" class="brand-pill-btn text-white text-center py-2.5 rounded-full block">Call (519) 778-8171</a>
     </div>
@@ -117,11 +121,10 @@
   <section class="relative w-screen h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
     
     <!-- Slideshow Images Container (Dynamically populated via JS) -->
-    <div id="slideshow" class="absolute inset-0 w-full h-full bg-neutral-950"></div>
+    <div id="slideshow" class="absolute inset-0 w-full h-full bg-neutral-950 overflow-hidden"></div>
 
     <!-- Dark Vignette Blends (Lighter middle gradient so photos stay visible) -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/30 to-black pointer-events-none z-10"></div>
-    <div class="absolute inset-0 bg-radial from-transparent via-black/20 to-black pointer-events-none z-10"></div>
 
     <!-- Centered Hero Text & Call to Action -->
     <div class="relative z-20 text-center px-6 max-w-4xl">
@@ -168,7 +171,7 @@
             </p>
           </div>
           <div class="flex flex-col sm:flex-row md:justify-end gap-4">
-            <a href="/aboutus" class="px-6 py-3 rounded-full border border-neutral-800 text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:border-neutral-600 transition-all text-center">
+            <a href="about.html" class="px-6 py-3 rounded-full border border-neutral-800 text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:border-neutral-600 transition-all text-center">
               Meet The Painters
             </a>
             <a href="tel:5197788171" class="brand-pill-btn text-white text-xs tracking-wider uppercase font-semibold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2">
@@ -180,7 +183,7 @@
 
       <!-- Services Header -->
       <div id="services" class="text-center mb-12">
-        <h2 class="text-2xl sm:4xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_15px_25px_rgba(255,255,255,0.08)]">
+        <h2 class="text-2xl sm:text-4xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_15px_25px_rgba(255,255,255,0.08)]">
           What We Do
         </h2>
         <p class="text-xs sm:text-sm text-neutral-400 tracking-wider uppercase mt-2">
@@ -317,65 +320,80 @@
     const menu = document.getElementById('mobile-menu');
     btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    // ==========================================
-    // EASILY ADD OR REMOVE SLIDESHOW IMAGES HERE
-    // ==========================================
+    // Slideshow Image URLs
     const slideshowImages = [
       "photos/rob1.png",
       "photos/rob2.png",
       "photos/rob3.png",
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2000&auto=format&fit=crop",
       "photos/garagepre.png",
       "photos/garageprep.png",
       "photos/garageprep2.png",
+      "photos/bradypainting.JPG",
       "photos/garagedone1.png"
     ];
 
     const slideshowContainer = document.getElementById('slideshow');
 
-    // Build the slide elements dynamically
+    // Build the slide elements positioned dynamically
     slideshowImages.forEach((src, idx) => {
       const slideDiv = document.createElement('div');
-      slideDiv.className = `slide-item absolute inset-0 w-full h-full ${idx === 0 ? 'opacity-100 z-1' : 'opacity-0 z-0'}`;
+      // Slide 0 starts in center; all subsequent slides start waiting to the right
+      slideDiv.className = `slide-item absolute inset-0 w-full h-full ${
+        idx === 0 ? 'translate-x-0 z-10' : 'translate-x-full z-0'
+      }`;
       
       const img = document.createElement('img');
       img.src = src;
       img.alt = `Campus Painting Showcase ${idx + 1}`;
-      img.className = 'w-full h-full object-cover scale-105';
+      img.className = 'w-full h-full object-cover scale-105 pointer-events-none';
       
       slideDiv.appendChild(img);
       slideshowContainer.appendChild(slideDiv);
     });
 
-    // Seamless Crossfade Logic (incoming slide fades in over the outgoing slide)
     const slides = document.querySelectorAll('.slide-item');
     let currentIndex = 0;
-    const intervalTime = 5000; // 5 seconds per photo
+    const intervalTime = 5000; // 5 seconds per slide
+    let isTransitioning = false;
 
-    function nextSlide() {
-      if (slides.length <= 1) return;
+    function slideNext() {
+      if (slides.length <= 1 || isTransitioning) return;
+      isTransitioning = true;
 
       const outgoing = slides[currentIndex];
       currentIndex = (currentIndex + 1) % slides.length;
       const incoming = slides[currentIndex];
 
-      // Elevate incoming slide and fade it in
-      incoming.style.zIndex = '2';
-      outgoing.style.zIndex = '1';
-      incoming.classList.remove('opacity-0');
-      incoming.classList.add('opacity-100');
+      // Prepare incoming slide: stage it at right, above outgoing
+      incoming.style.transition = 'none';
+      incoming.className = 'slide-item absolute inset-0 w-full h-full translate-x-full z-20';
 
-      // Once crossfade finishes (1200ms), cleanly reset outgoing slide
+      // Force DOM reflow so transition reapplies cleanly
+      void incoming.offsetWidth;
+
+      // Restore transition curve
+      incoming.style.transition = '';
+      outgoing.style.transition = '';
+
+      // Slide both elements to the left
+      outgoing.style.zIndex = '10';
+      outgoing.classList.remove('translate-x-0');
+      outgoing.classList.add('-translate-x-full');
+
+      incoming.classList.remove('translate-x-full');
+      incoming.classList.add('translate-x-0');
+
+      // Reset outgoing slide off-stage after animation completes (1100ms)
       setTimeout(() => {
-        outgoing.classList.remove('opacity-100');
-        outgoing.classList.add('opacity-0');
-        outgoing.style.zIndex = '0';
-        incoming.style.zIndex = '1';
-      }, 1200);
+        outgoing.style.transition = 'none';
+        outgoing.className = 'slide-item absolute inset-0 w-full h-full translate-x-full z-0';
+        outgoing.style.transition = '';
+        isTransitioning = false;
+      }, 1150);
     }
 
     if (slides.length > 1) {
-      setInterval(nextSlide, intervalTime);
+      setInterval(slideNext, intervalTime);
     }
   </script>
 </body>
