@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Security: Force browser to upgrade all HTTP requests to HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EZHKE3VNP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3EZHKE3VNP');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Free Estimate</title>
+</head>
+<body>
+
+    <form id="quoteForm">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <textarea name="postal-code" placeholder="A1B 2C3"></textarea>
+        <textarea name="details" placeholder="Project Details"></textarea>
+        <button type="submit">Request Quote</button>
+    </form>
+
+    <!-- https://script.google.com/macros/s/AKfycbyd5MRe_BxHU66_IrNuRqQLgemXqRLh7H8SnvpwFirawZ5-Jwy0rPkDVAYSz39GZAYC/exec -->
+     <script>
+  const form = document.getElementById('quoteForm');
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyd5MRe_BxHU66_IrNuRqQLgemXqRLh7H8SnvpwFirawZ5-Jwy0rPkDVAYSz39GZAYC/exec';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Avoids CORS blocking from static web hosts
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      alert('Quote request sent successfully!');
+      form.reset();
+    } catch (err) {
+      alert('Error submitting form. Please try again.');
+    }
+  });
+</script>
+    
+</body>
+</html>
