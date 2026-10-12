@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-CA" class="scroll-smooth">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EZHKE3VNP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EZHKE3VNP');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Free Painting Estimate in Ontario | Campus Painting</title>
+  <meta name="description" content="Request a free, no-obligation painting estimate from Campus Painting. Interior, exterior, residential and commercial painting across Ontario. We reply fast." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Campus Painting" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://campuspainting.ca/quote" />
+  <link rel="icon" type="image/jpeg" href="photos/logopng.jpg" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Campus Painting" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:title" content="Free Painting Estimate in Ontario | Campus Painting" />
+  <meta property="og:description" content="Tell us about your project and get a free painting estimate from two experienced student painters." />
+  <meta property="og:url" content="https://campuspainting.ca/quote" />
+  <meta property="og:image" content="https://campuspainting.ca/photos/logopng.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Free Painting Estimate | Campus Painting" />
+  <meta name="twitter:description" content="Request a free, no-obligation painting estimate in Ontario." />
+  <meta name="twitter:image" content="https://campuspainting.ca/photos/logopng.jpg" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "PaintingContractor",
+        "@id": "https://campuspainting.ca/#business",
+        "name": "Campus Painting",
+        "url": "https://campuspainting.ca/",
+        "telephone": "+1-519-778-8171",
+        "email": "info@campuspainting.ca",
+        "image": "https://campuspainting.ca/photos/logopng.jpg",
+        "priceRange": "$$",
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario" },
+        "address": { "@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA" },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Painting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exterior Painting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Painting" } }
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "https://campuspainting.ca/quote#page",
+        "url": "https://campuspainting.ca/quote",
+        "name": "Request a Free Painting Estimate",
+        "isPartOf": { "@id": "https://campuspainting.ca/#business" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://campuspainting.ca/" },
+          { "@type": "ListItem", "position": 2, "name": "Free Estimate", "item": "https://campuspainting.ca/quote" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sygne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'], sygne: ['Sygne', 'sans-serif'] },
+        boxShadow: {
+          'grey-glow': '0 0 50px -10px rgba(255,255,255,0.09)',
+          'grey-intense': '0 0 80px -20px rgba(200,200,200,0.12)'
+        }
+      } }
+    }
+  </script>
+
+  <style>
+    :root { --brand-orange: #ea580c; --brand-red: #dc2626; }
+    .brand-pill-btn {
+      background: linear-gradient(135deg, var(--brand-orange), var(--brand-red));
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .brand-pill-btn:hover:not(:disabled) { box-shadow: 0 0 25px rgba(234,88,12,0.45); transform: translateY(-2px); }
+    .brand-pill-btn:disabled { opacity: .6; cursor: not-allowed; }
+    .grey-glow-spot { background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 45%, transparent 70%); }
+    .field {
+      width: 100%; background: #050506; border: 1px solid #27272a; border-radius: 0.75rem;
+      padding: 0.85rem 1rem; color: #fff; font-size: 0.9rem; transition: border-color .2s, box-shadow .2s;
+    }
+    .field::placeholder { color: #52525b; }
+    .field:focus { outline: none; border-color: var(--brand-orange); box-shadow: 0 0 0 3px rgba(234,88,12,0.2); }
+    .field.invalid { border-color: var(--brand-red); }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+
+<body class="bg-black text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-neutral-800 selection:text-white flex flex-col min-h-screen">
+
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] grey-glow-spot blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-[900px] h-[400px] grey-glow-spot blur-3xl opacity-60"></div>
+  </div>
+
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-black/80 border-b border-neutral-900">
+    <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between" aria-label="Main navigation">
+      <a href="/" class="flex flex-col tracking-wider" aria-label="Campus Painting home">
+        <span class="text-sm font-black tracking-widest uppercase text-white leading-tight">Campus</span>
+        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400">Painting</span>
+      </a>
+      <div class="hidden md:flex items-center gap-10 text-xs tracking-wider uppercase font-medium text-neutral-400">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <a href="/aboutus" class="hover:text-white transition-colors">About</a>
+        <a href="/#services" class="hover:text-white transition-colors">Services</a>
+        <a href="/quote" class="text-white" aria-current="page">Free Estimate</a>
+      </div>
+      <div class="hidden sm:block">
+        <a href="tel:5197788171" class="brand-pill-btn text-white text-xs uppercase tracking-wider font-semibold px-6 py-2.5 rounded-full inline-flex items-center gap-2 shadow-lg">
+          <span>(519) 778-8171</span>
+        </a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-neutral-400 hover:text-white" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 bg-black border-b border-neutral-900 space-y-4 text-xs uppercase tracking-wider">
+      <a href="/" class="block text-neutral-400 hover:text-white">Home</a>
+      <a href="/aboutus" class="block text-neutral-400 hover:text-white">About</a>
+      <a href="/#services" class="block text-neutral-400 hover:text-white">Services</a>
+      <a href="/quote" class="block text-white">Free Estimate</a>
+      <a href="tel:5197788171" class="brand-pill-btn text-white text-center py-2.5 rounded-full block">Call (519) 778-8171</a>
+    </div>
+  </header>
+
+  <main class="relative z-10 flex-grow pt-16 pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white uppercase text-center mb-4 drop-shadow-[0_15px_25px_rgba(255,255,255,0.08)]">
+        Request a Free Estimate
+      </h1>
+      <p class="font-sygne text-sm sm:text-base text-neutral-400 text-center tracking-wide max-w-xl mx-auto mb-12">
+        Tell us about your interior or exterior painting project and we'll get back to you with a free, no-obligation quote.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+
+        <!-- Form card -->
+        <section class="md:col-span-3 bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 sm:p-10 shadow-grey-glow" aria-labelledby="form-title">
+          <h2 id="form-title" class="text-xl sm:text-2xl font-bold uppercase tracking-wide text-white mb-6">Your Details</h2>
+
+          <form id="quoteForm" novalidate class="space-y-5">
+            <div>
+              <label for="name" class="block text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-2">Full Name <span class="text-orange-500">*</span></label>
+              <input class="field" type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+              <p class="err text-xs text-red-500 mt-1.5 hidden" data-for="name">Please enter your name.</p>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-2">Phone Number <span class="text-orange-500">*</span></label>
+              <input class="field" type="tel" id="phone" name="phone" placeholder="(519) 555-0123" autocomplete="tel" inputmode="tel" required />
+              <p class="err text-xs text-red-500 mt-1.5 hidden" data-for="phone">Please enter a valid 10-digit phone number.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="email" class="block text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-2">Email <span class="text-neutral-600 normal-case">(optional)</span></label>
+                <input class="field" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" />
+                <p class="err text-xs text-red-500 mt-1.5 hidden" data-for="email">Please enter a valid email address.</p>
+              </div>
+              <div>
+                <label for="postal-code" class="block text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-2">Postal Code <span class="text-neutral-600 normal-case">(optional)</span></label>
+                <input class="field uppercase" type="text" id="postal-code" name="postal-code" placeholder="A1B 2C3" autocomplete="postal-code" maxlength="7" />
+                <p class="err text-xs text-red-500 mt-1.5 hidden" data-for="postal-code">Use the format A1B 2C3.</p>
+              </div>
+            </div>
+
+            <div>
+              <label for="details" class="block text-[11px] uppercase tracking-wider text-neutral-400 font-semibold mb-2">Project Details <span class="text-orange-500">*</span></label>
+              <textarea class="field resize-y" id="details" name="details" rows="5" placeholder="Rooms or areas to paint, approximate size, timeline, colours..." required></textarea>
+            </div>
+
+            <!-- Honeypot: hidden from people, bots tend to fill it -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <p id="form-error" class="text-sm text-red-500 hidden" role="alert"></p>
+
+            <button type="submit" id="submitBtn" class="brand-pill-btn w-full text-white text-xs tracking-wider uppercase font-semibold px-6 py-4 rounded-full inline-flex items-center justify-center gap-2">
+              <span id="btnText">Request Free Quote</span>
+            </button>
+            <p class="text-[11px] text-neutral-500 text-center">We only use your details to reply to this request.</p>
+          </form>
+        </section>
+
+        <!-- Side info -->
+        <aside class="md:col-span-2 space-y-6" aria-label="Why choose Campus Painting">
+          <div class="bg-[#0a0a0c] border border-neutral-800/90 rounded-2xl p-8 shadow-grey-glow">
+            <h2 class="text-base font-bold uppercase tracking-wider text-white mb-4">What happens next</h2>
+            <ul class="font-sygne text-sm text-neutral-300 leading-relaxed tracking-wide space-y-3">
+              <li>We review your project details.</li>
+              <li>We contact you to confirm scope and book a visit if needed.</li>
+              <li>You receive a clear, free written estimate.</li>
+            </ul>
+          </div>
+
+          <a href="tel:5197788171" class="group block bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow hover:shadow-grey-intense transition-all text-center">
+            <div class="w-14 h-14 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center mx-auto mb-4 group-hover:border-neutral-500 transition-all">
+              <i data-lucide="phone" class="w-7 h-7 text-white"></i>
+            </div>
+            <h3 class="text-base font-bold uppercase tracking-wider text-white mb-1">Prefer to call?</h3>
+            <p class="font-sygne text-sm text-neutral-400 tracking-wide">(519) 778-8171</p>
+          </a>
+
+          <a href="mailto:info@campuspainting.ca" class="group block bg-[#0a0a0c] border border-neutral-800/80 hover:border-neutral-700 p-8 rounded-2xl shadow-grey-glow hover:shadow-grey-intense transition-all text-center">
+            <div class="w-14 h-14 rounded-2xl bg-neutral-800 border border-neutral-700 flex items-center justify-center mx-auto mb-4 group-hover:border-neutral-500 transition-all">
+              <i data-lucide="mail" class="w-7 h-7 text-white"></i>
+            </div>
+            <h3 class="text-base font-bold uppercase tracking-wider text-white mb-1">Email us</h3>
+            <p class="font-sygne text-sm text-neutral-400 tracking-wide">ContactCampusPainting@gmail.com</p>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-neutral-900 bg-black py-8 text-center text-xs text-neutral-600 relative z-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="year"></span> Campus Painting. All rights reserved.</p>
+      <p class="text-neutral-500 tracking-wider uppercase text-[10px]">Ontario Student Painters</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+    });
+
+    // ---- Form logic ----
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyd5MRe_BxHU66_IrNuRqQLgemXqRLh7H8SnvpwFirawZ5-Jwy0rPkDVAYSz39GZAYC/exec';
+    const form = document.getElementById('quoteForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const formError = document.getElementById('form-error');
+
+    // Auto-format postal code as A1B 2C3
+    const postal = document.getElementById('postal-code');
+    postal.addEventListener('input', () => {
+      const v = postal.value.replace(/[^a-z0-9]/gi, '').toUpperCase().slice(0, 6);
+      postal.value = v.length > 3 ? v.slice(0, 3) + ' ' + v.slice(3) : v;
+    });
+
+    function setError(id, show) {
+      const input = document.getElementById(id);
+      form.querySelector('.err[data-for="' + id + '"]').classList.toggle('hidden', !show);
+      input.classList.toggle('invalid', show);
+      input.setAttribute('aria-invalid', String(show));
+    }
+
+    function validate(data) {
+      const checks = {
+        'name': data.name.length >= 2,
+        'phone': data.phone.replace(/\D/g, '').length >= 10,
+        'email': !data.email || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email),
+        'postal-code': !data['postal-code'] || /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/.test(data['postal-code'])
+      };
+      let ok = true, first = null;
+      for (const id in checks) {
+        setError(id, !checks[id]);
+        if (!checks[id]) { ok = false; first = first || id; }
+      }
+      if (first) document.getElementById(first).focus();
+      return ok;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.classList.add('hidden');
+
+      const raw = Object.fromEntries(new FormData(form).entries());
+      const data = {};
+      for (const k in raw) data[k] = String(raw[k]).trim();
+
+      // Bot caught by honeypot: pretend success, send nothing
+      if (data.website) { window.location.href = 'thankyou.html'; return; }
+      delete data.website;
+
+      // Must have at least a name and phone number
+      if (!validate(data)) return;
+
+      submitBtn.disabled = true;
+      btnText.textContent = 'Sending...';
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Avoids CORS blocking from static web hosts
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(data)
+        });
+        // Flag lets the thank-you page know this was a real submission
+        try { sessionStorage.setItem('quoteSubmitted', '1'); } catch (_) {}
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form: 'quote' });
+        window.location.href = 'thankyou.html';
+      } catch (err) {
+        formError.textContent = 'Something went wrong sending your request. Please try again or call (519) 778-8171.';
+        formError.classList.remove('hidden');
+        submitBtn.disabled = false;
+        btnText.textContent = 'Request Free Quote';
+      }
+    });
+  </script>
+</body>
+</html>
