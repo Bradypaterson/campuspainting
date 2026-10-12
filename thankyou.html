@@ -74,7 +74,7 @@
       <div class="h-1 w-full bg-neutral-800 rounded-full overflow-hidden mb-3" aria-hidden="true">
         <div class="bar h-full w-full brand-pill-btn rounded-full"></div>
       </div>
-      <p class="text-xs text-neutral-500 mb-6">Returning to the home page in 3 seconds...</p>
+      <p id="countdown" class="text-xs text-neutral-500 mb-6" role="timer">Returning to the home page in 3 seconds...</p>
       <a href="/" class="text-xs uppercase tracking-wider font-semibold text-neutral-400 hover:text-white underline underline-offset-4">Go to home page now</a>
     </section>
   </main>
@@ -90,7 +90,21 @@
       window.location.replace('/quote');
     } else {
       try { sessionStorage.removeItem('quoteSubmitted'); } catch (_) {}
-      setTimeout(() => { window.location.href = '/'; }, 3000);
+      let seconds = 3;
+      const label = document.getElementById('countdown');
+      const render = () => {
+        label.textContent = 'Returning to the home page in ' + seconds + (seconds === 1 ? ' second...' : ' seconds...');
+      };
+      render();
+      const timer = setInterval(() => {
+        seconds--;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.href = '/';
+        } else {
+          render();
+        }
+      }, 1000);
     }
   </script>
 </body>
